@@ -1,10 +1,12 @@
 import { DashboardBox } from "../../components/DashboardBox";
+import { SearchForm } from "./components/SearchForm";
 import { HomeContainer, PriceHighLight, TableContainer } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
       <DashboardBox />
+      <SearchForm />
 
       <TableContainer>
         <table>
