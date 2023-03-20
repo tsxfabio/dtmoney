@@ -4,5 +4,5 @@
 
 ### Libs Utilizadas:
 
-[Styled Components](https://styled-components.com/)
+[Styled Components](https://styled-components.com/)  
 [Radix-Ui](https://www.radix-ui.com/)
