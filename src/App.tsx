@@ -8,10 +8,10 @@ import { defaultTheme } from "./styles/themes/default";
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles />
       <Header />
       <Home />
-      <h1>Hello World</h1>
+
+      <GlobalStyles />
     </ThemeProvider>
   );
 }
