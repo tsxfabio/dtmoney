@@ -6,3 +6,4 @@
 
 [Styled Components](https://styled-components.com/)  
 [Radix-Ui](https://www.radix-ui.com/)
+[JSON Server](https://www.npmjs.com/package/json-server)
