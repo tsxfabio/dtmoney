@@ -1,0 +1,20 @@
+{
+  "tansactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de Site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2023-03-24T01:47:13.410Z"
+    },
+    {
+      "id": 2,
+      "description": "Passagem de Avião",
+      "type": "outcome",
+      "category": "Viagem",
+      "price": 2500,
+      "createdAt": "2023-03-24T01:50:00.410Z"
+    }
+  ]
+}

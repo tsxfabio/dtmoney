@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import { DashboardBox } from "../../components/DashboardBox";
 import { SearchForm } from "./components/SearchForm";
 import { HomeContainer, PriceHighLight, TableContainer } from "./styles";
 
 export function Home() {
+  async function loadTransactions() {
+    const response = await fetch("http://localhost:3333/tansactions");
+    const data = await response.json();
+
+    console.log(data);
+  }
+
+  useEffect(() => {
+    loadTransactions();
+  }, []);
+
   return (
     <HomeContainer>
       <DashboardBox />
