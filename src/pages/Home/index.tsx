@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DashboardBox } from "../../components/DashboardBox";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { SearchForm } from "./components/SearchForm";
 import { HomeContainer, PriceHighLight, TableContainer } from "./styles";
 
-interface TransactionsProps {
-  id: number;
-  description: string;
-  type: "income" | "outcome";
-  category: string;
-  price: number;
-  createdAt: string;
-}
-
 export function Home() {
-  const [transactions, setTransactions] = useState<TransactionsProps[]>([]);
-
-  async function loadTransactions() {
-    const response = await fetch("http://localhost:3333/tansactions");
-    const data = await response.json();
-
-    setTransactions(data);
-  }
-
-  useEffect(() => {
-    loadTransactions();
-  }, []);
+  const { transactions } = useContext(TransactionsContext);
 
   return (
     <HomeContainer>

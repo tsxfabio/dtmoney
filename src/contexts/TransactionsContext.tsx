@@ -1,29 +1,41 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 /* Inferfaces */
-
 interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-interface Transactions {
+interface TransactionsProps {
   id: number;
   description: string;
   type: "income" | "outcome";
   price: number;
   category: string;
-  createAt: string;
+  createdAt: string;
 }
 
 interface TransactionsContextType {
-  transections: Transactions[];
+  transactions: TransactionsProps[];
 }
 
-const TransactionsContext = createContext({} as TransactionsContextType);
+export const TransactionsContext = createContext({} as TransactionsContextType);
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
+  const [transactions, setTransactions] = useState<TransactionsProps[]>([]);
+
+  async function loadTransactions() {
+    const response = await fetch("http://localhost:3333/tansactions");
+    const data = await response.json();
+
+    setTransactions(data);
+  }
+
+  useEffect(() => {
+    loadTransactions();
+  }, []);
+
   return (
-    <TransactionsContext.Provider value={{ transections: [] }}>
+    <TransactionsContext.Provider value={{ transactions }}>
       {children}
     </TransactionsContext.Provider>
   );
