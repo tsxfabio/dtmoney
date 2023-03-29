@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { DashboardBox } from "../../components/DashboardBox";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { currencyFormatter, dateFormatter } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 import { HomeContainer, PriceHighLight, TableContainer } from "./styles";
 
@@ -20,10 +21,12 @@ export function Home() {
                 <tr key={t.id}>
                   <td width='50%'>{t.description}</td>
                   <td>
-                    <PriceHighLight variant={t.type}>{t.price}</PriceHighLight>
+                    <PriceHighLight variant={t.type}>
+                      {currencyFormatter.format(t.price)}
+                    </PriceHighLight>
                   </td>
                   <td>{t.category}</td>
-                  <td>{t.createdAt}</td>
+                  <td>{dateFormatter.format(new Date(t.createdAt))}</td>
                 </tr>
               );
             })}
