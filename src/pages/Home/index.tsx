@@ -22,6 +22,7 @@ export function Home() {
                   <td width='50%'>{t.description}</td>
                   <td>
                     <PriceHighLight variant={t.type}>
+                      {t.type === "outcome" && "- "}
                       {currencyFormatter.format(t.price)}
                     </PriceHighLight>
                   </td>

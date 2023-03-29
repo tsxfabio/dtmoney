@@ -5,8 +5,10 @@
 ### Libs Utilizadas:
 
 [Styled Components](https://styled-components.com/)  
-[Radix-Ui](https://www.radix-ui.com/)
-[JSON Server](https://www.npmjs.com/package/json-server)
+[Radix-Ui](https://www.radix-ui.com/)  
+[JSON Server](https://www.npmjs.com/package/json-server)  
+[React Hook Form](https://react-hook-form.com)  
+[Zod](https://zod.dev/)
 
 ### Material de Auxílio:
 

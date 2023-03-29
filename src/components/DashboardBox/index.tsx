@@ -3,31 +3,12 @@ import {
   ArrowCircleDown,
   CurrencyDollar,
 } from "@phosphor-icons/react";
-import { useContext } from "react";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { useDashboardData } from "../../hooks/useDashboardData";
 import { currencyFormatter } from "../../utils/formatter";
 import { DashboardCard, DashboardContainer } from "./styles";
 
 export function DashboardBox() {
-  const { transactions } = useContext(TransactionsContext);
-
-  const dashboardData = transactions.reduce(
-    (acc, transactions) => {
-      if (transactions.type === "income") {
-        acc.income += transactions.price;
-        acc.total += transactions.price;
-      } else {
-        acc.outcome += transactions.price;
-        acc.total -= transactions.price;
-      }
-      return acc;
-    },
-    {
-      income: 0,
-      outcome: 0,
-      total: 0,
-    }
-  );
+  const dashboardData = useDashboardData();
 
   return (
     <DashboardContainer>
