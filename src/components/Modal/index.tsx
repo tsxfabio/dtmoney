@@ -7,18 +7,38 @@ import {
   TransactionType,
   TransactionTypeButton,
 } from "./styles";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  descricao: string;
+  preco: number;
+  categoria: string;
+};
 
 export function Modal() {
+  const { register, handleSubmit, watch } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  console.log(watch("descricao"));
+
   return (
     <Dialog.Portal>
       <Overlay />
       <Content>
         <Dialog.Title>Nova Transação</Dialog.Title>
 
-        <form action=''>
-          <input type='text' placeholder='Descrtição' required />
-          <input type='number' placeholder='Preço' required />
-          <input type='text' placeholder='Categoria' required />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type='text'
+            placeholder='Descrição'
+            {...register("descricao")}
+          />
+          <input type='number' placeholder='Preço' {...register("preco")} />
+          <input
+            type='text'
+            placeholder='Categoria'
+            {...register("categoria")}
+          />
 
           <TransactionType>
             <TransactionTypeButton variant='income' value='income'>
