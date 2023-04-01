@@ -19,8 +19,6 @@ export function Modal() {
   const { register, handleSubmit, watch } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
-  console.log(watch("descricao"));
-
   return (
     <Dialog.Portal>
       <Overlay />
