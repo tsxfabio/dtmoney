@@ -28,5 +28,10 @@ export const SearchFormContainer = styled.form`
     border-radius: 6px;
     border: 1px solid ${(props) => props.theme["green-300"]};
     color: ${(props) => props.theme["green-300"]};
+
+    :disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   }
 `;

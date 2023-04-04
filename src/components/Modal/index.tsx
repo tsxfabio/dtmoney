@@ -16,7 +16,11 @@ type Inputs = {
 };
 
 export function Modal() {
-  const { register, handleSubmit, watch } = useForm<Inputs>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
@@ -50,7 +54,9 @@ export function Modal() {
             </TransactionTypeButton>
           </TransactionType>
 
-          <button type='submit'>Cadastrar</button>
+          <button type='submit' disabled={isSubmitting}>
+            Cadastrar
+          </button>
         </form>
 
         <Close>
