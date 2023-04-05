@@ -8,20 +8,23 @@ import {
   TransactionTypeButton,
 } from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
+import * as z from "zod";
 
-type Inputs = {
-  descricao: string;
-  preco: number;
-  categoria: string;
-};
+const modalSchema = z.object({
+  descricao: z.string(),
+  preco: z.number(),
+  categoria: z.string(),
+});
+
+type InputModalSchema = z.infer<typeof modalSchema>;
 
 export function Modal() {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  } = useForm<InputModalSchema>();
+  const onSubmit: SubmitHandler<InputModalSchema> = (data) => console.log(data);
 
   return (
     <Dialog.Portal>
