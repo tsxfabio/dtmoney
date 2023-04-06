@@ -9,7 +9,8 @@
 [JSON Server](https://www.npmjs.com/package/json-server)  
 [React Hook Form](https://react-hook-form.com)  
 [React Hook Form Resolvers](https://react-hook-form.com/api/useform/#resolver)  
-[Zod](https://zod.dev/)
+[Zod](https://zod.dev/)  
+[Axios](https://axios-http.com/ptbr/docs/intro)
 
 ### Material de Auxílio:
 

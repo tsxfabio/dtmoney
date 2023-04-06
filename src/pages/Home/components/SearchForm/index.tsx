@@ -5,6 +5,8 @@ import * as z from "zod";
 
 // Entender o motivo do resolvers
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext } from "react";
+import { TransactionsContext } from "../../../../contexts/TransactionsContext";
 
 // Aqui já seria a validação?
 const searchFormSchema = z.object({
@@ -14,9 +16,11 @@ const searchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof searchFormSchema>;
 
 export function SearchForm() {
+  const { fetchTransactions } = useContext(TransactionsContext);
+
   async function handleSubmitSearchTransaction(data: SearchFormInputs) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
+    fetchTransactions(data.query);
   }
 
   const {
