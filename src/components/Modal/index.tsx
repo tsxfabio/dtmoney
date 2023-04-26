@@ -28,6 +28,9 @@ export function Modal() {
     formState: { isSubmitting },
   } = useForm<InputModalSchema>({
     resolver: zodResolver(modalSchema),
+    defaultValues: {
+      type: "income",
+    },
   });
   const onSubmit: SubmitHandler<InputModalSchema> = (data) => console.log(data);
 

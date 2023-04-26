@@ -1,6 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
