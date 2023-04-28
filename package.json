@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:server": "json-server server.json -p 3333 -w -d 500",
+    "start": "start npm run dev && start npm run dev:server",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

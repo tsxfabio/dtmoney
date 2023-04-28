@@ -10,11 +10,12 @@ import {
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { api } from "../../lib/axios";
 
 const modalSchema = z.object({
-  descricao: z.string(),
-  preco: z.number(),
-  categoria: z.string(),
+  description: z.string(),
+  price: z.number(),
+  category: z.string(),
   type: z.enum(["income", "outcome"]),
 });
 
@@ -32,7 +33,20 @@ export function Modal() {
       type: "income",
     },
   });
-  const onSubmit: SubmitHandler<InputModalSchema> = (data) => console.log(data);
+
+  //const onSubmit: SubmitHandler<InputModalSchema> = (data) => console.log(data);
+
+  async function handleCreateNewTransaction(data: InputModalSchema) {
+    const { description, price, category, type } = data;
+
+    await api.post("transactions", {
+      description,
+      price,
+      category,
+      type,
+      createdAt: new Date(),
+    });
+  }
 
   return (
     <Dialog.Portal>
@@ -40,21 +54,21 @@ export function Modal() {
       <Content>
         <Dialog.Title>Nova Transação</Dialog.Title>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
           <input
             type='text'
             placeholder='Descrição'
-            {...register("descricao")}
+            {...register("description")}
           />
           <input
             type='number'
             placeholder='Preço'
-            {...register("preco", { valueAsNumber: true })}
+            {...register("price", { valueAsNumber: true })}
           />
           <input
             type='text'
             placeholder='Categoria'
-            {...register("categoria")}
+            {...register("category")}
           />
 
           <Controller

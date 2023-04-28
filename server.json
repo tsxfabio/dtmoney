@@ -15,6 +15,22 @@
       "category": "Viagem",
       "price": 2500,
       "createdAt": "2023-03-24T01:50:00.410Z"
+    },
+    {
+      "description": "Criação de Site",
+      "price": 5000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-28T02:36:23.213Z",
+      "id": 3
+    },
+    {
+      "description": "Hospedagem de Site Pessoal",
+      "price": 800,
+      "category": "Infraestrutura",
+      "type": "outcome",
+      "createdAt": "2023-04-28T02:37:02.958Z",
+      "id": 4
     }
   ]
 }
