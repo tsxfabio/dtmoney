@@ -14,8 +14,8 @@
 
 ### Material de Auxílio:
 
-[Você PRECISA ENTENDER o conteúdo DESSE | Callbacks, Sincrono, Assíncrono e Event Loop no JavaScript](https://youtu.be/6lbBaM18X3g)
-[Como usar Async/Await? Promises no JavaScript? Você NUNCA MAIS VAI ERRAR](https://youtu.be/q28lfkBd9F4)
+- [Você PRECISA ENTENDER o conteúdo DESSE | Callbacks, Sincrono, Assíncrono e Event Loop no JavaScript](https://youtu.be/6lbBaM18X3g)
+- [Como usar Async/Await? Promises no JavaScript? Você NUNCA MAIS VAI ERRAR](https://youtu.be/q28lfkBd9F4)
 
 ### Instruções para Iniciar:
 

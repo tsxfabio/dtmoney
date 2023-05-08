@@ -26,6 +26,7 @@ export function Modal() {
     control,
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting },
   } = useForm<InputModalSchema>({
     resolver: zodResolver(modalSchema),
@@ -46,6 +47,8 @@ export function Modal() {
       type,
       createdAt: new Date(),
     });
+
+    reset();
   }
 
   return (

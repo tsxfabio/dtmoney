@@ -39,6 +39,14 @@
       "type": "outcome",
       "createdAt": "2023-05-08T01:19:25.503Z",
       "id": 5
+    },
+    {
+      "description": "Salário",
+      "price": 3000,
+      "category": "Salário",
+      "type": "income",
+      "createdAt": "2023-05-08T01:34:48.173Z",
+      "id": 6
     }
   ]
 }
