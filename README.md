@@ -16,3 +16,8 @@
 
 [Você PRECISA ENTENDER o conteúdo DESSE | Callbacks, Sincrono, Assíncrono e Event Loop no JavaScript](https://youtu.be/6lbBaM18X3g)
 [Como usar Async/Await? Promises no JavaScript? Você NUNCA MAIS VAI ERRAR](https://youtu.be/q28lfkBd9F4)
+
+### Instruções para Iniciar:
+
+1. Instalar as dependências com `npm install`.
+2. Utilizar `npm run start` para inciar o servidor local e executar o projeto.
