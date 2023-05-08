@@ -31,6 +31,14 @@
       "type": "outcome",
       "createdAt": "2023-04-28T02:37:02.958Z",
       "id": 4
+    },
+    {
+      "description": "Zé Delivery",
+      "price": 33,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-05-08T01:19:25.503Z",
+      "id": 5
     }
   ]
 }
